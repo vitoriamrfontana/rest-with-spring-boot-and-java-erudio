@@ -1,0 +1,13 @@
+vitoriamrfontana\data\dto\v2\PersonDTOV2.class
+vitoriamrfontana\controllers\PersonController.class
+vitoriamrfontana\exception\hadler\CustomEntityResponseHandler.class
+vitoriamrfontana\services\PersonServices.class
+vitoriamrfontana\mapper\custom\PersonMapper.class
+vitoriamrfontana\Startup.class
+vitoriamrfontana\repository\PersonRepository.class
+vitoriamrfontana\exception\ExceptionResponse.class
+vitoriamrfontana\data\dto\v1\PersonDTO.class
+vitoriamrfontana\exception\ResourceNotFoundException.class
+vitoriamrfontana\model\Person.class
+vitoriamrfontana\mapper\ObjectMapper.class
+vitoriamrfontana\controllers\TestLogController.class
