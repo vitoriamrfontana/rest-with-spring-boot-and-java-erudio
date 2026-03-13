@@ -3,7 +3,7 @@ package vitoriamrfontana.unitetests.mapper.mocks;
 import java.util.ArrayList;
 import java.util.List;
 
-import vitoriamrfontana.data.dto.PersonDTO;
+import vitoriamrfontana.data.dto.v1.PersonDTO;
 import vitoriamrfontana.model.Person;
 
 public class MockPerson {
