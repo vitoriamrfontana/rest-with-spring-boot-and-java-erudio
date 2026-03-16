@@ -15,5 +15,5 @@ spring:
     open-in-view: false
 logging:
   level:
-    #root: WARN
-    vitoriamrfontana: DEBUG
+    root: INFO
+    #vitoriamrfontana: DEBUG
