@@ -1,4 +1,4 @@
-package vitoriamrfontana.unittests.mapper.services;
+package vitoriamrfontana.unittests.services;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -15,7 +15,7 @@ import vitoriamrfontana.data.dto.v1.PersonDTO;
 import vitoriamrfontana.exception.RequiredObjectIsNullException;
 import vitoriamrfontana.model.Person;
 import vitoriamrfontana.repository.PersonRepository;
-import vitoriamrfontana.unittests.mapper.mapper.mocks.MockPerson;
+import vitoriamrfontana.unittests.mapper.mocks.MockPerson;
 
 import java.util.List;
 import java.util.Optional;

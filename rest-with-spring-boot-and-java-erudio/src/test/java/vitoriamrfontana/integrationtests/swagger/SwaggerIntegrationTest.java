@@ -1,12 +1,12 @@
 package vitoriamrfontana.integrationtests.swagger;
 
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
 import vitoriamrfontana.config.TestConfigs;
 import vitoriamrfontana.integrationtests.testcontainers.AbstractIntegrationTest;
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
 
 import static io.restassured.RestAssured.given;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static junit.framework.TestCase.assertTrue;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
 class SwaggerIntegrationTest extends AbstractIntegrationTest {
@@ -15,15 +15,14 @@ class SwaggerIntegrationTest extends AbstractIntegrationTest {
 	void shouldDisplaySwaggerUIPage() {
 		var content = given()
 				.basePath("/swagger-ui/index.html")
-					.port(TestConfigs.SERVER_PORT)
+				.port(TestConfigs.SERVER_PORT)
 				.when()
-					.get()
+				.get()
 				.then()
-					.statusCode(200)
+				.statusCode(200)
 				.extract()
-					.body()
-						.asString();
-
+				.body()
+				.asString();
 		assertTrue(content.contains("Swagger UI"));
 	}
 

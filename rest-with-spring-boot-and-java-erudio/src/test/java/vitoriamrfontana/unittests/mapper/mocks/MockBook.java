@@ -1,4 +1,4 @@
-package vitoriamrfontana.unittests.mapper.mapper.mocks;
+package vitoriamrfontana.unittests.mapper.mocks;
 
 import java.util.ArrayList;
 import java.util.Date;

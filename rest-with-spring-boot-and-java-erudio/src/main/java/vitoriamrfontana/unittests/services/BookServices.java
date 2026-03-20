@@ -1,10 +1,10 @@
-package vitoriamrfontana.unittests.mapper.services;
+package vitoriamrfontana.unittests.services;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import vitoriamrfontana.controllers.docs.BookController;
+import vitoriamrfontana.controllers.BookController;
 import vitoriamrfontana.data.dto.v1.BookDTO;
 import vitoriamrfontana.exception.RequiredObjectIsNullException;
 import vitoriamrfontana.exception.ResourceNotFoundException;

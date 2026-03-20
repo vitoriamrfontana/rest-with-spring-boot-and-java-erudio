@@ -1,0 +1,8 @@
+vitoriamrfontana\unittests\mapper\services\PersonServicesTest.class
+vitoriamrfontana\integrationtests\testcontainers\AbstractIntegrationTest.class
+vitoriamrfontana\unittests\mapper\mapper\mocks\MockPerson.class
+vitoriamrfontana\unittests\mapper\mapper\mocks\MockBook.class
+vitoriamrfontana\integrationtests\testcontainers\AbstractIntegrationTest$Initializer.class
+vitoriamrfontana\integrationtests\swagger\SwaggerIntegrationTest.class
+vitoriamrfontana\unittests\mapper\services\BookServicesTest.class
+vitoriamrfontana\config\TestConfigs.class
