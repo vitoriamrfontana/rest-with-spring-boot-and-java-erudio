@@ -15,6 +15,7 @@ import vitoriamrfontana.data.dto.v1.PersonDTO;
 import vitoriamrfontana.exception.RequiredObjectIsNullException;
 import vitoriamrfontana.model.Person;
 import vitoriamrfontana.repository.PersonRepository;
+import vitoriamrfontana.services.PersonServices;
 import vitoriamrfontana.unittests.mapper.mocks.MockPerson;
 
 import java.util.List;

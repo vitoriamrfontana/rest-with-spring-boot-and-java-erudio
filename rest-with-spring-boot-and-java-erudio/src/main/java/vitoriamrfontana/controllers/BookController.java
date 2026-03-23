@@ -7,7 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import vitoriamrfontana.controllers.docs.BookControllerDocs;
 import vitoriamrfontana.data.dto.v1.BookDTO;
-import vitoriamrfontana.unittests.services.BookServices;
+import vitoriamrfontana.services.BookServices;
 
 import java.util.List;
 

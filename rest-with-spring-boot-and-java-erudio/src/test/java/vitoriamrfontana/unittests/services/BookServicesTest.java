@@ -4,6 +4,7 @@ import vitoriamrfontana.data.dto.v1.BookDTO;
 import vitoriamrfontana.exception.RequiredObjectIsNullException;
 import vitoriamrfontana.model.Book;
 import vitoriamrfontana.repository.BookRepository;
+import vitoriamrfontana.services.BookServices;
 import vitoriamrfontana.unittests.mapper.mocks.MockBook;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

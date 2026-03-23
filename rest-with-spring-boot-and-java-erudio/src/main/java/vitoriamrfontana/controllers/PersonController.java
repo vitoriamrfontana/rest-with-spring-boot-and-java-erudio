@@ -2,7 +2,7 @@ package vitoriamrfontana.controllers;
 
 import vitoriamrfontana.controllers.docs.PersonControllerDocs;
 import vitoriamrfontana.data.dto.v1.PersonDTO;
-import vitoriamrfontana.unittests.services.PersonServices;
+import vitoriamrfontana.services.PersonServices;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -29,7 +29,7 @@ public class PersonController implements PersonControllerDocs {
         return service.findAll();
     }
 
-    @CrossOrigin(origins = "http://localhost:8080")
+   // @CrossOrigin(origins = "http://localhost:8080")
     @GetMapping(value = "/{id}",
             produces = {
                     MediaType.APPLICATION_JSON_VALUE,
@@ -40,8 +40,7 @@ public class PersonController implements PersonControllerDocs {
     public PersonDTO findById(@PathVariable("id") Long id) {
         return service.findById(id);
     }
-
-    @CrossOrigin(origins = {"http://localhost:8080"})
+    //@CrossOrigin(origins = {"http://localhost:8080", "https://www.erudio.com.br"})
     @PostMapping(
             consumes = {
                     MediaType.APPLICATION_JSON_VALUE,
