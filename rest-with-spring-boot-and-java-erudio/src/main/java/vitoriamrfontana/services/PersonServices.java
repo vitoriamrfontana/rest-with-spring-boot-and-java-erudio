@@ -53,14 +53,15 @@ public class PersonServices {
                                         pageable.getPageSize(),
                                         String.valueOf(pageable.getSort())))
                 .withSelfRel();
-        return assembler.toModel(peopleWithLinks, findAllLink);
+        return assembler.toModel(peopleWithLinks,
+                findAllLink);
     }
 
     public PagedModel<EntityModel<PersonDTO>> findByName(String firstName, Pageable pageable) {
 
         logger.info("Finding People by name!");
 
-        var people = repository.findPeopleByName(firstName, pageable);
+        var people = repository.findPersonByName(firstName, pageable);
 
         var peopleWithLinks = people.map(person -> {
             var dto = parseObject(person, PersonDTO.class);
