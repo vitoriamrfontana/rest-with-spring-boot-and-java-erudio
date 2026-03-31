@@ -95,8 +95,8 @@ WHERE
 		</element>
 	</title>
 	<detail>
-		<band height="150" splitType="Stretch">
-			<element kind="subreport" uuid="f185adb1-474a-4e8f-9260-0d9bf8589af2" x="4" y="10" width="540" height="140">
+		<band height="50" splitType="Stretch">
+			<element kind="subreport" uuid="f185adb1-474a-4e8f-9260-0d9bf8589af2" x="4" y="10" width="540" height="40">
 				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
 				<expression><![CDATA["books.jasper"]]></expression>
 			</element>

@@ -9,8 +9,7 @@ import vitoriamrfontana.exception.ResourceNotFoundException;
 
 import static vitoriamrfontana.mapper.ObjectMapper.parseObject;
 
-import vitoriamrfontana.file.exporter.MediaTypes;
-import vitoriamrfontana.file.exporter.contract.FileExporter;
+import vitoriamrfontana.file.exporter.contract.PersonExporter;
 import vitoriamrfontana.file.exporter.factory.FileExporterFactory;
 import vitoriamrfontana.file.importer.contract.FileImporter;
 import vitoriamrfontana.file.importer.factory.FileImporterFactory;
@@ -34,7 +33,6 @@ import org.springframework.hateoas.server.mvc.WebMvcLinkBuilder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 import java.util.Optional;
@@ -81,8 +79,23 @@ public class PersonServices {
                 .getContent();
 
         try {
-            FileExporter exporter = this.exporter.getExporter(acceptHeader);
-            return exporter.exportFile(people);
+            PersonExporter exporter = this.exporter.getExporter(acceptHeader);
+            return exporter.exportPeople(people);
+        } catch (Exception e) {
+            throw new RuntimeException("Error during file export!", e);
+        }
+    }
+
+    public Resource exportPerson(Long id, String acceptHeader) {
+        logger.info("Exporting data of one Person!");
+
+        var person = repository.findById(id)
+                .map(entity -> parseObject(entity, PersonDTO.class))
+                .orElseThrow(() -> new ResourceNotFoundException("No records found for this ID!"));
+
+        try {
+            PersonExporter exporter = this.exporter.getExporter(acceptHeader);
+            return exporter.exportPerson(person);
         } catch (Exception e) {
             throw new RuntimeException("Error during file export!", e);
         }
@@ -193,8 +206,7 @@ public class PersonServices {
                                         pageable.getPageSize(),
                                         String.valueOf(pageable.getSort())))
                 .withSelfRel();
-        return assembler.toModel(peopleWithLinks,
-                findAllLink);
+        return assembler.toModel(peopleWithLinks, findAllLink);
     }
 
     private void addHateoasLinks(PersonDTO dto) {

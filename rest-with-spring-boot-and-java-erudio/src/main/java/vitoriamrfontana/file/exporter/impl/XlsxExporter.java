@@ -1,7 +1,7 @@
 package vitoriamrfontana.file.exporter.impl;
 
 import vitoriamrfontana.data.dto.v1.PersonDTO;
-import vitoriamrfontana.file.exporter.contract.FileExporter;
+import vitoriamrfontana.file.exporter.contract.PersonExporter;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.core.io.ByteArrayResource;
@@ -12,10 +12,10 @@ import java.io.ByteArrayOutputStream;
 import java.util.List;
 
 @Component
-public class XlsxExporter implements FileExporter {
+public class XlsxExporter implements PersonExporter {
 
     @Override
-    public Resource exportFile(List<PersonDTO> people) throws Exception {
+    public Resource exportPeople(List<PersonDTO> people) throws Exception {
         try (Workbook workbook = new XSSFWorkbook()){
             Sheet sheet = workbook.createSheet("People");
 
@@ -59,9 +59,8 @@ public class XlsxExporter implements FileExporter {
         return style;
     }
 
-
     @Override
-    public Resource exportPerson(List<PersonDTO> person) throws Exception {
+    public Resource exportPerson(PersonDTO person) throws Exception {
         return null;
     }
 }

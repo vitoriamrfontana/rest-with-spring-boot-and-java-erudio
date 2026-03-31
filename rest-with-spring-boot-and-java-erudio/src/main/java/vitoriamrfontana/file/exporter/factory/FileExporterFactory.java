@@ -2,7 +2,7 @@ package vitoriamrfontana.file.exporter.factory;
 
 import vitoriamrfontana.exception.BadRequestException;
 import vitoriamrfontana.file.exporter.MediaTypes;
-import vitoriamrfontana.file.exporter.contract.FileExporter;
+import vitoriamrfontana.file.exporter.contract.PersonExporter;
 import vitoriamrfontana.file.exporter.impl.CsvExporter;
 import vitoriamrfontana.file.exporter.impl.PdfExporter;
 import vitoriamrfontana.file.exporter.impl.XlsxExporter;
@@ -20,7 +20,7 @@ public class FileExporterFactory {
     @Autowired
     private ApplicationContext context;
 
-    public FileExporter getExporter(String acceptHeader) throws Exception {
+    public PersonExporter getExporter(String acceptHeader) throws Exception {
         if (acceptHeader.equalsIgnoreCase(MediaTypes.APPLICATION_XLSX_VALUE)) {
             return context.getBean(XlsxExporter.class);
         } else if (acceptHeader.equalsIgnoreCase(MediaTypes.APPLICATION_CSV_VALUE)) {
