@@ -3,7 +3,7 @@ package vitoriamrfontana.controllers;
 import vitoriamrfontana.controllers.docs.PersonControllerDocs;
 import vitoriamrfontana.data.dto.v1.PersonDTO;
 import vitoriamrfontana.file.exporter.MediaTypes;
-import vitoriamrfontana.services.PersonServices;
+import vitoriamrfontana.services.PersonService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,7 +30,7 @@ import java.util.Map;
 public class PersonController implements PersonControllerDocs {
 
     @Autowired
-    private PersonServices service;
+    private PersonService service;
 
     @GetMapping(produces = {
             MediaType.APPLICATION_JSON_VALUE,
